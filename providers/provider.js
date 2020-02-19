@@ -445,27 +445,27 @@ function Provider(network) {
             balances = newBalances;
         });
 
-        self.doPoll();
+        // self.doPoll();
     }
 
     utils.defineProperty(this, 'resetEventsBlock', function(blockNumber) {
         lastBlockNumber = blockNumber;
-        self.doPoll();
+        // self.doPoll();
     });
 
     var poller = null;
     Object.defineProperty(this, 'polling', {
         get: function() { return (poller != null); },
         set: function(value) {
-            setTimeout(function() {
-                if (value && !poller) {
-                    poller = setInterval(doPoll, 4000);
+            // setTimeout(function() {
+            //     if (value && !poller) {
+            //         poller = setInterval(doPoll, 4000);
 
-                } else if (!value && poller) {
-                    clearInterval(poller);
-                    poller = null;
-                }
-            }, 0);
+            //     } else if (!value && poller) {
+            //         clearInterval(poller);
+            //         poller = null;
+            //     }
+            // }, 0);
         }
     });
 }
